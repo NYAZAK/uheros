@@ -16,8 +16,6 @@ public class SavePersonnes {
         try {
             fis = new FileInputStream(file);
             ois = new ObjectInputStream(fis);
-
-            System.out.println("Affichage des Personnages :");
             persLec = (ArrayList<Personne>) ois.readObject();
 
         } catch (FileNotFoundException fnfe) {
@@ -42,6 +40,11 @@ public class SavePersonnes {
 
 //-----------------Ecriture--------------
         ArrayList<Personne> persEcr = ReadSavePerso();
+        for (Personne i :persEcr) {
+            if (ps.getPseudo() == i.getPseudo()){
+                persEcr.remove(i);
+            }
+        }
         persEcr.add(ps);
         File file = new File("SavePersonnes.dat");
 
@@ -64,6 +67,11 @@ public class SavePersonnes {
             }
         }
     }
+    public static void WriteSavePerso(ArrayList<Personne> arL) throws IOException {
+        for (Personne p:arL) {
+            WriteSavePerso(p);
+        }
+    }
 
 
     private static void safeClose(Closeable closeable) {
@@ -78,8 +86,9 @@ public class SavePersonnes {
     public static void ListePersonnage() throws IOException {
         ArrayList<Personne> persLec;
         persLec = ReadSavePerso();
+        System.out.println("Liste Personnage : ");
         for (Personne i : persLec) {
-            System.out.println(i);
+            System.out.println(i.toString());
         }
     }
 

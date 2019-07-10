@@ -1,8 +1,9 @@
 package com.minijeu.uheros.PersonnagesPack;
 
 
+import java.io.Serializable;
 
-public class Personne  implements  Equipements{
+public class Personne  implements  Equipements, Serializable {
 
     private String pseudo;
     private String sexe;
@@ -166,5 +167,8 @@ public class Personne  implements  Equipements{
         }
 
 
+    }
+    public String toString(){
+       return  "j'ai "+this.age+" je suis "+this.pseudo;
     }
 }
