@@ -1,4 +1,4 @@
 package com.minijeu.uheros.LieuxPack;
 
-public interface Fôrets {
+public class ForêtAmazonienne {
 }
