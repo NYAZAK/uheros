@@ -1,4 +1,4 @@
-package com.minijeu.uhero;
+package com.minijeu.uheros;
 
 public class Main {
 
