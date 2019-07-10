@@ -11,55 +11,49 @@ public class Personne  implements  Equipements{
     private int vie;
     private int xp;
     private int force;
-    private EquipementsSet head;
-    private EquipementsSet cheast;
-    private EquipementsSet legs;
-    private EquipementsSet weapon;
+    private String head;
+    private String cheast;
+    private String legs;
+    private String weapon;
 
-    public Personne(String pseudo, String sexe, int age, int niveau, int vie, int xp, int force, EquipementsSet head, EquipementsSet cheast, EquipementsSet legs, EquipementsSet weapon  ){
+    public Personne(String pseudo, String sexe, int age, int niveau){
         this.pseudo = pseudo;
         this.sexe = sexe;
         this.age = age;
         this.niveau = niveau;
-        this.vie = vie;
-        this.xp = xp;
-        this.force = force;
-        this.head = head;
-        this.cheast = cheast;
-        this.legs = legs;
-        this.weapon =weapon;
+
 
     }
 
-    public EquipementsSet getHead() {
+    public String getHead() {
         return head;
     }
 
-    public void setHead(EquipementsSet head) {
+    public void setHead(String head) {
         this.head = head;
     }
 
-    public EquipementsSet getCheast() {
+    public String getCheast() {
         return cheast;
     }
 
-    public void setCheast(EquipementsSet cheast) {
+    public void setCheast(String cheast) {
         this.cheast = cheast;
     }
 
-    public EquipementsSet getLegs() {
+    public String getLegs() {
         return legs;
     }
 
-    public void setLegs(EquipementsSet legs) {
+    public void setLegs(String legs) {
         this.legs = legs;
     }
 
-    public EquipementsSet getWeapon() {
+    public String getWeapon() {
         return weapon;
     }
 
-    public void setWeapon(EquipementsSet weapon) {
+    public void setWeapon(String weapon) {
         this.weapon = weapon;
     }
 
@@ -156,7 +150,7 @@ public class Personne  implements  Equipements{
     }
 
     @Override
-    public void addArmor(EquipementsSet head, EquipementsSet cheast, EquipementsSet legs) {
+    public void addArmor(String head, String cheast, String legs) {
 
         // il remplace le casque par le nouveau casque (TODO mettre l'ancien head dans une collection de casque dans l'inventaire)
         if(getHead() != null) {
@@ -170,8 +164,6 @@ public class Personne  implements  Equipements{
         if(getLegs() != null){
             this.legs = legs;
         }
-
-
 
 
     }
