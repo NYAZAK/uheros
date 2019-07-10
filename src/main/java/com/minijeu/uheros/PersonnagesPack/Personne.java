@@ -11,9 +11,12 @@ public class Personne  implements  Equipements{
     private int vie;
     private int xp;
     private int force;
+    private EquipementsSet head;
+    private EquipementsSet cheast;
+    private EquipementsSet legs;
+    private EquipementsSet weapon;
 
-
-    public Personne(String pseudo, String sexe, int age, int niveau, int vie, int xp, int force){
+    public Personne(String pseudo, String sexe, int age, int niveau, int vie, int xp, int force, EquipementsSet head, EquipementsSet cheast, EquipementsSet legs, EquipementsSet weapon  ){
         this.pseudo = pseudo;
         this.sexe = sexe;
         this.age = age;
@@ -21,7 +24,43 @@ public class Personne  implements  Equipements{
         this.vie = vie;
         this.xp = xp;
         this.force = force;
+        this.head = head;
+        this.cheast = cheast;
+        this.legs = legs;
+        this.weapon =weapon;
 
+    }
+
+    public EquipementsSet getHead() {
+        return head;
+    }
+
+    public void setHead(EquipementsSet head) {
+        this.head = head;
+    }
+
+    public EquipementsSet getCheast() {
+        return cheast;
+    }
+
+    public void setCheast(EquipementsSet cheast) {
+        this.cheast = cheast;
+    }
+
+    public EquipementsSet getLegs() {
+        return legs;
+    }
+
+    public void setLegs(EquipementsSet legs) {
+        this.legs = legs;
+    }
+
+    public EquipementsSet getWeapon() {
+        return weapon;
+    }
+
+    public void setWeapon(EquipementsSet weapon) {
+        this.weapon = weapon;
     }
 
     public int getVie() {
@@ -87,8 +126,13 @@ public class Personne  implements  Equipements{
 
     @Override
     public int moreDangerous(int velocite) {
-
-        return 0;
+        int newForce;
+        if(velocite > 0){
+            newForce = getForce() + velocite;
+        } else {
+            newForce = getForce() - velocite;
+        }
+        return newForce;
     }
 
     @Override
@@ -113,6 +157,10 @@ public class Personne  implements  Equipements{
 
     @Override
     public void addArmor(EquipementsSet head, EquipementsSet cheast, EquipementsSet legs) {
+
+
+
+
 
     }
 }

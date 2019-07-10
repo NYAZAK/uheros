@@ -6,6 +6,7 @@ public class EquipementsSet {
     private ItemsEquipement legs;
     private ItemsEquipement weapon;
 
+
     public  EquipementsSet( ItemsEquipement head, ItemsEquipement cheast, ItemsEquipement legs, ItemsEquipement weapon){
         this.head = head;
         this.cheast = cheast;
