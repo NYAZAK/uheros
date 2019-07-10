@@ -14,7 +14,7 @@ public interface Equipements {
 
     public void addWeapon(EquipementsSet weapon);
 
-    public void addArmor(EquipementsSet head,EquipementsSet cheast, EquipementsSet legs );
+    public void addArmor(String head,String cheast, String legs );
 
 
 }
