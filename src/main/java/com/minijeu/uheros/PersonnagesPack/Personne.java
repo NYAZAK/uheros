@@ -158,6 +158,18 @@ public class Personne  implements  Equipements{
     @Override
     public void addArmor(EquipementsSet head, EquipementsSet cheast, EquipementsSet legs) {
 
+        // il remplace le casque par le nouveau casque (TODO mettre l'ancien head dans une collection de casque dans l'inventaire)
+        if(getHead() != null) {
+            this.head = head;
+        }
+
+        if(getCheast() != null){
+            this.cheast = cheast;
+        }
+
+        if(getLegs() != null){
+            this.legs = legs;
+        }
 
 
 
